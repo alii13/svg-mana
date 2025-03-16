@@ -1,0 +1,67 @@
+{
+    "name": "svg-mana",
+    "displayName": "svg-mana",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "author": {
+        "name": "Alii",
+        "email": "shekhaliul44@gmail.com",
+        "url": "https://github.com/alii13"
+    },
+    "bugs": {
+        "url": "https://github.com/alii13/svg-mana/issues"
+    },
+    "homepage": "https://github.com/alii13/svg-mana#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alii13/svg-mana.git"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:xml",
+        "onLanguage:svg"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "svgCurrentColor.replaceColors",
+                "title": "Transform using svg mana"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "svgCurrentColor.replaceColors",
+                    "when": "resourceExtname == .svg",
+                    "group": "navigation"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "icon": "logo.png",
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@types/vscode": "^1.95.0",
+        "@typescript-eslint/eslint-plugin": "^8.25.0",
+        "@typescript-eslint/parser": "^8.25.0",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1",
+        "eslint": "^9.21.0",
+        "typescript": "^5.7.3"
+    }
+}
